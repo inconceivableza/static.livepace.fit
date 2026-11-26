@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>LivePace 0.8.0-beta2 released</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preload" as="style" href="/assets/built/screen.css?v=26ea89a066">
+    <link rel="preload" as="script" href="/assets/built/source.js?v=26ea89a066">
+    
+    <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-roman.woff2?v=26ea89a066" crossorigin="anonymous">
+<style>
+    @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 100 900;
+        font-display: optional;
+        src: url(/assets/fonts/inter-roman.woff2?v=26ea89a066) format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+</style>
+
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css?v=26ea89a066">
+
+    <style>
+        :root {
+            --background-color: #ffffff
+        }
+    </style>
+
+    <script>
+        /* The script for calculating the color contrast has been taken from
+        https://gomakethings.com/dynamically-changing-the-text-color-based-on-background-color-contrast-with-vanilla-js/ */
+        var accentColor = getComputedStyle(document.documentElement).getPropertyValue('--background-color');
+        accentColor = accentColor.trim().slice(1);
+
+        if (accentColor.length === 3) {
+            accentColor = accentColor[0] + accentColor[0] + accentColor[1] + accentColor[1] + accentColor[2] + accentColor[2];
+        }
+
+        var r = parseInt(accentColor.substr(0, 2), 16);
+        var g = parseInt(accentColor.substr(2, 2), 16);
+        var b = parseInt(accentColor.substr(4, 2), 16);
+        var yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000;
+        var textColor = (yiq >= 128) ? 'dark' : 'light';
+
+        document.documentElement.className = `has-${textColor}-text`;
+    </script>
+
+    <link rel="icon" href="/content/images/size/w256h256/2026/02/3d-icon-60x60-1.png" type="image/png">
+    <link rel="canonical" href="https://livepace.fit/livepace-0-8-0-beta2-released/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta property="og:site_name" content="LivePace">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="LivePace 0.8.0-beta2 released">
+    <meta property="og:description" content="LivePace 0.8.0-beta2 Release Notes
+
+The second beta of LivePace 0.8.0. Key changes:
+
+ * The distance of a run on a route is now worked out by following the path you ran, and a race shows the distance you travelled beside its course distance.
+ * On Android a run">
+    <meta property="og:url" content="https://livepace.fit/livepace-0-8-0-beta2-released/">
+    <meta property="og:image" content="https://livepace.fit/content/images/2026/02/runners-of-the-indianapolis-mini-marathon-run-through-e7ba9e-1024.jpg">
+    <meta property="article:published_time" content="2026-11-26T16:14:21.000Z">
+    <meta property="article:modified_time" content="2026-11-26T16:14:21.000Z">
+    <meta property="article:publisher" content="https://www.facebook.com/ghost">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LivePace 0.8.0-beta2 released">
+    <meta name="twitter:description" content="LivePace 0.8.0-beta2 Release Notes
+
+The second beta of LivePace 0.8.0. Key changes:
+
+ * The distance of a run on a route is now worked out by following the path you ran, and a race shows the distance you travelled beside its course distance.
+ * On Android a run">
+    <meta name="twitter:url" content="https://livepace.fit/livepace-0-8-0-beta2-released/">
+    <meta name="twitter:image" content="https://livepace.fit/content/images/2026/02/runners-of-the-indianapolis-mini-marathon-run-through-e7ba9e-1024.jpg">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="David Fraser">
+    <meta name="twitter:site" content="@ghost">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="683">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "LivePace",
+        "url": "/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/content/images/2026/02/ghost-logo-header-3.png"
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "David Fraser",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://www.gravatar.com/avatar/1e2e37e187b18b008b8de9bb59081042?s=250&r=x&d=mp",
+            "width": 250,
+            "height": 250
+        },
+        "url": "/author/david/",
+        "sameAs": []
+    },
+    "headline": "LivePace 0.8.0-beta2 released",
+    "url": "/livepace-0-8-0-beta2-released/",
+    "datePublished": "2026-11-26T16:14:21.000Z",
+    "dateModified": "2026-11-26T16:14:21.000Z",
+    "description": "LivePace 0.8.0-beta2 Release Notes\n\nThe second beta of LivePace 0.8.0. Key changes:\n\n * The distance of a run on a route is now worked out by following the path you ran, and a race shows the distance you travelled beside its course distance.\n * On Android a run goes on in full with LivePace swiped away.\n * Live tracking now knows each of your runs by its own identity, so the leaderboard and your followers always see the run you are on (if permissions allow)\n * The Live Tracking map and the run&#x27;s",
+    "mainEntityOfPage": "https://livepace.fit/livepace-0-8-0-beta2-released/"
+}
+    </script>
+
+    <meta name="generator" content="Ghost 5.130">
+    <link rel="alternate" type="application/rss+xml" title="LivePace" href="https://livepace.fit/rss/">
+    
+    <script defer src="https://cdn.jsdelivr.net/ghost/sodo-search@~1.8/umd/sodo-search.min.js" data-key="e3f9893ddb014104bd33d8d815" data-styles="https://cdn.jsdelivr.net/ghost/sodo-search@~1.8/umd/main.css" data-sodo-search="/" data-locale="en" crossorigin="anonymous"></script>
+    
+    <link href="/webmentions/receive/" rel="webmention">
+    <script defer src="/public/cards.min.js?v=26ea89a066"></script><style>:root {--ghost-accent-color: #f0a030;}</style>
+    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=26ea89a066">
+
+</head>
+<body class="post-template has-sans-title has-sans-body">
+
+<div class="gh-viewport">
+    
+    <header id="gh-navigation" class="gh-navigation is-middle-logo gh-outer">
+    <div class="gh-navigation-inner gh-inner">
+
+        <div class="gh-navigation-brand">
+            <a class="gh-navigation-logo is-title" href="/">
+                    <img src="/content/images/2026/02/ghost-logo-header-3.png" alt="LivePace">
+            </a>
+            <button class="gh-search gh-icon-button" aria-label="Search this site" data-ghost-search>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>            <button class="gh-burger gh-icon-button" aria-label="Menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"></path></svg>                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path></svg>            </button>
+        </div>
+
+        <nav class="gh-navigation-menu">
+            <ul class="nav">
+    <li class="nav-home"><a href="/">Home</a></li>
+    <li class="nav-about"><a href="/about/">About</a></li>
+    <li class="nav-privacy-policy"><a href="/privacy-policy/">Privacy Policy</a></li>
+</ul>
+
+        </nav>
+
+        <div class="gh-navigation-actions">
+                    <button class="gh-search gh-icon-button" aria-label="Search this site" data-ghost-search>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>        </div>
+
+    </div>
+</header>
+
+    
+
+<main class="gh-main">
+
+    <article class="gh-article post no-image">
+
+        <header class="gh-article-header gh-canvas">
+
+            <span>
+            </span>
+            <h1 class="gh-article-title is-title">LivePace 0.8.0-beta2 released</h1>
+
+            <div class="gh-article-meta">
+                <div class="gh-article-author-image instapaper_ignore">
+                            <a href="/author/david/">
+                                <img class="author-profile-image" src="https://www.gravatar.com/avatar/1e2e37e187b18b008b8de9bb59081042?s&#x3D;250&amp;r&#x3D;x&amp;d&#x3D;mp" alt="David Fraser">
+                            </a>
+                </div>
+                <div class="gh-article-meta-wrapper">
+                    <h4 class="gh-article-author-name"><a href="/author/david/">David Fraser</a></h4>
+                    <div class="gh-article-meta-content">
+                        <time class="gh-article-meta-date" datetime="2026-11-26">26 Nov 2026</time>
+                            <span class="gh-article-meta-length"><span class="bull">—</span> 16 min read</span>
+                    </div>
+                </div>
+            </div>
+
+            
+        </header>
+
+        <section class="gh-content gh-canvas is-body">
+            <h2 id="livepace-080-beta2-release-notes">LivePace 0.8.0-beta2 Release Notes</h2><p>The second beta of LivePace 0.8.0. Key changes:</p><ul><li>The distance of a run on a route is now worked out by following the path you ran, and a race shows the distance you travelled beside its course distance.</li><li>On Android a run goes on in full with LivePace swiped away.</li><li>Live tracking now knows each of your runs by its own identity, so the leaderboard and your followers always see the run you are on (if permissions allow)</li><li>The Live Tracking map and the run's map are now one map, the run calendar has four filters for public races, group runs, etc, a waiting run has four auto-start choices, and the Garmin watch app tells the phone which activity each message is about.</li><li>On Android, connecting to a Garmin watch no longer crashes the app.</li></ul><p>All changes apply to both Android and iOS unless noted. Android and iOS are still in open beta / TestFlight.</p><h3 id="the-course-distance-and-the-distance-travelled">The Course Distance and the Distance Travelled</h3><ul><li><strong>The course distance follows your path.</strong> On a run with a route, where you are along the route is worked out from the path you most probably ran, fix by fix, with an error model fitted to recorded runs. It holds its place on ground covered twice (an out-and-back, a lap, two legs side by side), keeps going along the route while you run beside it, and no longer steps back, jumps ahead or stands still while you move as often as before. Cutting a corner, a wild first fix, fixes far off before you reach the route and fixes that drift slowly to one side are all handled.</li></ul><figure class="kg-card kg-image-card kg-card-hascaption"><img src="/content/images/2026/11/image.png" class="kg-image" alt="" loading="lazy" width="363" height="99"><figcaption><span style="white-space: pre-wrap;">iOS course distance and distance travelled</span></figcaption></figure><ul><li><strong>Two distances, each where it belongs.</strong> A race on a route goes by its course distance and a training run by the distance you travelled. A race on a route now shows the distance travelled beside its course distance, and "Off route" with your distance from the route once you are 50 m or more away. The run screen names the figure: on Android the distance tile reads COURSE DISTANCE or DISTANCE TRAVELLED, and on iOS the info row says "Travelled:" where it said "Actual:".</li><li><strong>Off the route</strong> the course distance goes on no faster than twice the distance you travel there, so a detour neither freezes it nor races it ahead. "Off route" goes as soon as you are back on the route.</li><li><strong>Marks with GPS off.</strong> After a mark made with GPS off, a training run on a route is placed on the course by the distance travelled since its last position.</li><li><strong>The watch's distance.</strong> While the watch is the only source of positions (no phone fix for over a minute), the distance travelled goes on by the watch's own distance for that stretch.</li><li><strong>Race Details</strong> lists a checkpoint and the whole kilometre near it apart when their times differ, with small icons and a legend where the list mixes the two distances. A mark's pace is taken from the row before it, never from a hidden GPS time. On Android, Race Details follows the run while it is open.</li><li><strong>A finished race on a route</strong> shows the distance travelled as well as its course distance, in its review, summary and exports. The pace bars follow a mark that corrects the run's earlier distances.</li></ul><h3 id="your-run-keeps-going-android">Your Run Keeps Going (Android)</h3><ul><li><strong>With LivePace swiped away</strong> from the recent apps, a run now goes on in full: its distance keeps growing, live tracking keeps sending, the watch stays linked, a pause is still bounded, the clock still starts a waiting run, and a finish, an auto-finalise and the recording notification all go on without the app's screen. Opening LivePace again picks up the run as it is.</li><li><strong>A run nothing will record is warned of.</strong> When a planned run is due to start and GPS cannot start for it (LivePace is in the background and GPS is not running yet), a loud "Run start" notification says "Open LivePace to record "; allow LivePace's notifications in Garmin Connect to see it on your watch (the setup guide has the step). The alarms that start and warn are set again after the phone restarts.</li><li><strong>If Android ends LivePace mid-run</strong>, the notification says the run is no longer being recorded instead of showing it as still tracking.</li><li><strong>Stop</strong> on a waiting run's notification turns its automatic start off.</li></ul><h3 id="starting-a-run">Starting a Run</h3><ul><li><strong>Four auto-start choices.</strong> "Start automatically" is now Off, At Start Time, On Crossing Start Line or Auto (either the time or the crossing). The waiting screen shows the choice on a row of its own, also before any countdown, and the run editor offers the four. A race, a run of a server race and a group run with a route start as Auto; other runs start as Off. The home-screen reminder says how the run will start.</li><li><strong>The start line.</strong> A crossing is taken only from fixes near the line (never a fix far away), never times a start before the gun for a runner standing at the line, and in Auto moves a start the clock made to the crossing, also when the fix is timed ahead of the phone's clock. A crossing that cannot be timed starts the run at the fix at the line, never before the planned start. A start by the clock a few seconds early is taken at the planned start.</li><li><strong>The fixes before the start</strong> are kept while a start is armed, as the choice needs them, so a start at the line or a start moved earlier has the fixes leading up to it.</li><li><strong>"Turn off all sensors"</strong> is kept with the run, also across a relaunch, and decided again at its start: with automatic battery management on and the phone charged enough meanwhile, the sensors come back on at the start in the mode the battery will last, and you are told so.</li><li><strong>Paying users' starts</strong> are no longer counted against the free tier's limit, so if a subscription lapses later only the starts made without one count.</li></ul><h3 id="marks-pauses-and-the-finish">Marks, Pauses and the Finish</h3><ul><li><strong>Finish line.</strong> The crossing is dated where the line lies, between the fixes either side of it, and the finish choices wait a few seconds for the fix past the line. If you stop just short of the end, the finish is dated by your pace from the last fixes. A training run finished at the line takes the distance it had at the crossing.</li><li><strong>The finish keeps your marks.</strong> A finish at your latest mark's distance keeps that mark, the summary shows a mark made after the last recorded position, and a run found finished in its recording when it is opened takes the finish time the recording gives.</li><li><strong>The auto-finalise</strong> after a finish line names the run by its kind and the time it will finish at ("Finalising race at 10:43", or "run" for a training run) and keeps that time even if the app is ended meanwhile; on Android an alarm finishes the run at that time with the phone asleep. The Finish choices are taken down when it finishes the run. After "Cancel and continue run" it waits five minutes from your cancel, not from the crossing, before it counts down again while you stay near the line, also when the app was ended and opened again meanwhile.</li><li><strong>Moving time.</strong> The Finish choices give the moving time, rest breaks left out, as the run screen's clock does.</li><li><strong>A finish far from the plan</strong> asks for the distance and time you finished at ("Manually"), and a typed finish time after now is refused.</li><li><strong>Typed marks.</strong> A mark typed with a time before the run's start is refused with "A mark can't be before the run's start, ", the form staying open.</li><li><strong>"Mark actual distance"</strong> (a long press on GPS) as filled records the run's distance itself, dated to when you opened it, so the course distance no longer steps back by what you ran while the dialog was up.</li><li><strong>The Mark control</strong> is held for 5 seconds after you resume a finished run, as after a start. A tap on it while it shows GPS records no mark and shows "To manually record distance, hold on the GPS button".</li><li><strong>Make another run</strong>, in the run wizard and in the run editor, opens the new run onto its waiting screen.</li></ul><h3 id="live-tracking-and-following">Live Tracking and Following</h3><ul><li><strong>Each run has its own identity.</strong> A run is known to the server by the identity your phone gives it, so the run you link, activate, finish or leave is exactly the run on the board. Your phone tells the server which run it wants active, and the server follows; a wish that cannot be sent yet is kept until it can, also across a restart.</li><li><strong>Activate asks first.</strong> Before Activate links the open run to a race, opens another run of it or makes a new one, it asks ("Link the open run to ?", "Open your run of ?", "Make a new run of ?"), and says when the run is made active. An Activate that changes nothing says why.</li><li><strong>One run of a race.</strong> Linking a run to a race reuses the race's one unfinished run, also one that is only on the server, and asks when there is more than one. A new run of a race you already have a run of asks first.</li><li><strong>Positions name their run</strong> and carry your course distance and distance travelled, so the leaderboard shows your phone's own figures. Your followers' apps follow your run's state (running, paused, finished) as it changes, so a finish stays a finish until you start another run.</li><li><strong>A waiting run of a race or group run</strong> is made your active run as soon as you open it, so your followers and its race's board have it before the start; a run called off before its start leaves no row.</li><li><strong>A run kept by its marks</strong> (GPS off, distances typed by hand) stays under way on the board, timed to its latest mark, and goes stale only 15 minutes after you were last heard from, not 2. Its latest figures are sent again every minute while no position goes.</li><li><strong>The leaderboard</strong> shows a run made inactive by another, or silent for 4 hours (a day in a race over 42.2 km), as abandoned, and keeps every row that started. A finished row keeps the distance its finish gave it, also when the runner walks back along the course or starts another run. A runner who joins a group run again after finishing it keeps the finish on the board (0.8.0-beta1's notes said a fresh row was started).</li><li><strong>One connection at a time.</strong> Your phone makes one live-tracking connection at a time, so a run's start is sent once (iOS sometimes sent it twice) and no spare connection is left open after the finish (on Android one could stay until the app was closed).</li><li><strong>Link status.</strong> A follow error names the share code it is for, and with several follows in error says how many ("2 codes; ABCD2345: ...").</li><li><strong>Your share and device key look after themselves.</strong> Your share code is registered together with your device's key and a proof of it. A share taken over by another phone (a restored backup, say) is let go on this one, and a packet counter that keeps being refused is moved forward. Delete Share, and the delete of a run or a group run on the server, are kept and sent again until the server confirms them; the lists show such a run as pending deletion meanwhile.</li><li><strong>Requests in order.</strong> Live-tracking requests reach the server in the order you made them, and one sent again is never applied twice.</li><li><strong>A followed runner's position is as old as it is.</strong> While a runner's phone has no new GPS fix (they stand still, or their phone has lost its GPS signal), it sends its last fix again, so a position can reach you well after it was taken. It is now aged from when the runner's phone took it, not from when it reached you: the age beside the runner says how old it really is, the maps draw it and the watch lists it only while it is recent by that time, and one taken more than 4 hours ago is not shown at all. Earlier versions showed such a position as just received. The route the Live Tracking map draws goes by the same time.</li><li><strong>Under 16, the age band can be put right.</strong> The Live Tracking settings show the age band you declared, with Update age band, also under 16, so a band chosen by mistake can be changed while you hold a share code.</li></ul><h3 id="races-and-group-runs">Races and Group Runs</h3><ul><li><strong>A race that is over</strong> is said to be over ("This race is over", "This group run is over") and takes no new joins or activations. Its leaderboard shows its results; a run made active in time whose first message arrives late still gets its row within 7 days. Find race lists a race until it is over and still offers the routes of one that is over.</li><li><strong>Group runs you organise</strong> are listed under My Races and Group Runs in the Live Tracking settings, with their link, QR code, routes, Ad-Hoc switch and a delete for everyone, whether or not you take part.</li><li><strong>Create group run</strong> in the run editor and in the Live Tracking settings asks "Do you want to participate in this run?", as the run wizard does, and a group run can be created with no start time (the time picker proposes the wizard's default start). A group run whose start is more than 4 hours past cannot be created, and one already over can be duplicated to another date.</li><li><strong>A group run's routes.</strong> A waiting run of a group run that has no route takes the group run's route only when the group run has exactly one; with several, the route is yours to pick in the run editor.</li></ul><h3 id="the-run-calendar">The Run Calendar</h3><figure class="kg-card kg-image-card"><img src="/content/images/2026/11/online-calendar.png" class="kg-image" alt="" loading="lazy" width="1080" height="2318" srcset="/content/images/size/w600/2026/11/online-calendar.png 600w, /content/images/size/w1000/2026/11/online-calendar.png 1000w, /content/images/2026/11/online-calendar.png 1080w" sizes="(min-width: 720px) 720px"></figure><ul><li><strong>Four selections, always there.</strong> The calendar's second row now has My Races, Public Races, Group Runs and Other Runs, each an independent toggle kept between launches, whether the calendar is opened from the header or from Live Tracking. A public race you have a run of is shown once, as your run. New installs start with My Races, Group Runs and Other Runs on.</li><li><strong>Races far ahead.</strong> My Races shows a race you joined in its month, as your run, however far ahead it is; My Races and Group Runs in the Live Tracking settings lists the next three months.</li><li><strong>Browse in calendar</strong> in the Live Tracking settings turns Public Races and Group Runs on, with or without a share code; without one, a public race's details offer Register share code.</li></ul><h3 id="maps">Maps</h3><p>The Live Tracking map and the run's full-screen map are now one map, drawn the same way on both apps:</p><ul><li><strong>The same look and buttons:</strong> start and finish pins, checkpoint discs, the elevation strip, and the camera buttons Follow me, Everyone and Route.</li><li><strong>The path you ran</strong> is the track on every map, starting at the run's start (no map draws a track before it). Where you keep to one side of the route (the far side of a road, say), your track is drawn there, beside the route line, and the distance you travel is measured along it.</li><li><strong>Colours:</strong> the course is an orange dotted line and your track blue on every map, and the covered-distance dot is amber with a white ring. The downloaded map's course is no longer coloured by pace.</li><li><strong>Live Tracking in runner mode</strong> shows your open run's own route, with its checkpoints (Edit and Share), the downloaded map, followed runners and their routes, as the run's map does. After a finish, Live Tracking keeps showing where you are; the run's map does not.</li><li><strong>Followed runners</strong> are drawn the same on every map, the run's map included, with their name and expected arrival window. A supporter no longer sees the chosen route drawn twice.</li><li><strong>The run screen's small map</strong> puts your dot by the same rule as the big maps, shows whenever it has something to draw, and where it does not, says why ("No map: GPS is switched off", "Waiting for a GPS position", and so on).</li></ul><h3 id="the-run-screen">The Run Screen</h3><ul><li><strong>The GPS icon</strong> is one drawing on both apps: the GPS target, with up to three small arcs in its top-right corner for the GPS level in use (three at full power, fewer in the low-battery modes), its colour for the latest fix (green, orange or red by accuracy, grey when stale), a small badge at its top-left once accuracy was poor earlier in the run, and the recording dot in its bottom-right corner. On iOS the target replaces the arrow, also on the GPS mark button.</li><li><strong>The checkpoint panel</strong> shows the last checkpoint passed, tagged "Last", and the next one, tagged "Next", each tag turned upright on a thin strip so the clock times keep their width on a narrow phone. Android now shows the last checkpoint passed too. While your last mark is at that checkpoint (its automatic mark as you pass it), the "Last" row is left out, as the mark's row shows it already, and when the rows do not all fit, the panel is scrolled so the "Next" row with its predicted times is in full view, the earlier rows a scroll up.</li><li><strong>The power mode you chose</strong> before refusing location permission is chosen again when you give the permission back.</li></ul><h3 id="garmin-watch">Garmin Watch</h3><ul><li><strong>Android: no crash on connecting to a watch.</strong> LivePace 0.8.0-beta1 from Google Play could close again and again as it connected to a Garmin watch. This version connects normally, so update the phone app if you use a watch.</li></ul><p>The LivePace data field has an update on the Connect IQ store, for the Forerunner 165 and Forerunner 965 as before (the Forerunner 55 is not supported yet). With it on your watch, and this version on your phone:</p><ul><li><strong>Each watch activity belongs to one run.</strong> An activity already running when a run waits asks "Your watch's activity has been running since . Start this run from then?" (Start from , Start now, Not this activity). Until you answer, pausing and resuming it on the watch starts nothing, and a question left unanswered is asked again of the run you open next. An activity tied to one run no longer starts, pauses or ends another, also after a restart of the phone app.</li><li><strong>The watch's state comes from its activity's timer</strong>, timed when it changed rather than when it was sent, and the watch reports its state when the data field starts, when the phone asks and, on watches with Connect IQ 5 or later (such as the Forerunner 165 and 965), when the phone link comes back.</li><li><strong>Late data is kept.</strong> A finished run a watch was heard in keeps taking the watch's late data for ten minutes; meanwhile Settings' Export all data, Import and Clear all data say so and until when. A run you left takes the watch's samples timed inside it.</li><li><strong>With the phone's GPS off</strong>, the watch's pause and resume always pause and resume the run, whatever "Auto start/stop run with watch activity" says, and the watch's timer stands in for a pause or resume whose message was lost.</li></ul><p>Mixed versions work: this phone version with the earlier data field acts on the watch's messages as before. The new data field with LivePace 0.8.0-beta1 or earlier on the phone is followed as before, except that the phone no longer hears a start when the data field is started inside an activity already running (or a start and a pause inside a paused one).</p><h3 id="reliability-the-runs-data">Reliability: The Run's Data</h3><ul><li><strong>Stated in the run's file first.</strong> A rest break and a finish are written to the run's own recording before the run's settings say so, so a crash in between loses nothing, and a run reloaded from its file is the run as it was recorded live.</li><li><strong>Compacted runs.</strong> Deleting a mark, changing the start or the rest breaks of a finished run whose recording has been compacted changes the compacted recording too, and resuming such a run restores its whole recording first, keeping everything only the uncompacted copy held. On a long run this takes a few seconds, done in the background: the screen does not wait for it, and another change asked for meanwhile is not made and says why. A compacted recording found damaged when it is the run's only copy is set aside (as <code>&lt;id&gt;.lprd.bad</code>) instead of deleted; the run stays finished, and Resume says why it cannot resume it.</li><li><strong>Late watch data</strong> is merged whole, and a watch sample sent twice is taken once.</li><li><strong>The open run's track is never thinned</strong> in memory, so every distance, export and elevation profile takes in every fix.</li><li><strong>The run's route file</strong> is written only when the route changed, in the background.</li></ul><h3 id="android-specific">Android-Specific</h3><ul><li><strong>Open with</strong> offers LivePace for a file whose name ends in .gpx, whatever type the sending app gives it.</li><li><strong>Settings &gt; Sensors</strong> is redrawn when a setting changes from elsewhere, and "Resume this run?" names the run.</li><li><strong>A waiting run with its sensors turned off</strong> keeps its location service held idle, also after a relaunch, so GPS can come back on at its start with the app in the background.</li><li><strong>Track Runners</strong> and the maps draw a followed runner's label as on iOS, and a checkpoint's info on both maps offers Edit and Share.</li><li><strong>Following keeps going after a dropped connection.</strong> A followed runner's positions kept arriving only until the connection to the server first dropped and came back, and then stopped until LivePace was opened again; they now carry on.</li><li><strong>Find race</strong> asks for the race list again, so a race added while the app runs can be found, and a run editor opened before the list arrives offers its races once it does.</li><li><strong>Google Play no longer requires Wi-Fi</strong> of a device: Play had listed the app as needing Wi-Fi hardware, though nothing in it does.</li><li><strong>The checkpoint panel's times are shown whole on a small phone.</strong> On a phone 360 dp wide (such as a 720 x 1280 screen), or with a large font size, the "Next" row's predicted times, elapsed and by the clock, are drawn smaller where they would not fit, with their AM or PM, instead of being cut to "5:1" or left out. The panel's rows also end before its list button, so no time is hidden under it.</li></ul><h3 id="ios-specific">iOS-Specific</h3><ul><li><strong>GPS follows the run.</strong> The GPS switch stops the run's location, the barometer and step counter follow the run from five minutes before a planned start, and a change of power mode reaches a running session at once.</li><li><strong>With the GPS switch off and a watch linked</strong>, a light location session keeps the run going in the background.</li><li><strong>The public races calendar</strong> opens without a share code, and a list showing no run says whether none is saved or the selections hide them.</li><li><strong>Sheets.</strong> The typed finish and the mark sheet close their keypad so their buttons can be reached, and a drag on the typed finish no longer cancels it. The waiting screen's "Start automatically" menu stays open.</li><li><strong>"Finish line detected"</strong> names the crossing's distance in the run's unit, and the phone's last known location shown before a first fix is never taken as where you are.</li><li><strong>Launch.</strong> LivePace no longer waits at launch for Location Services to say whether it may use your location, which could get the app stopped by iOS while Location Services was slow to answer.</li><li><strong>About</strong> shows the build number beside the version ("Version 0.8.0-beta2 (2)"), as TestFlight lists it.</li></ul><h3 id="privacy-policy">Privacy Policy</h3><p>The privacy policy (<a href="https://livepace.fit/privacy-policy/?ref=livepace.fit">https://livepace.fit/privacy-policy/</a>) now says what the Garmin watch app sends and to whom, and what the leaderboard web app shows, sends, keeps and logs.</p><h3 id="known-issues">Known Issues</h3><ul><li>A GPX file over 4 MB picked for a group run is accepted, but its upload is refused at every Retry.</li><li>The run editor's placement map for an existing group run can open with no route drawn.</li><li>A training section moved past by hand is forgotten when the app is restarted mid-run.</li><li>The run wizard's When page still offers "Start automatically at this time" as on or off; the four choices are on the waiting screen and in the run editor.</li><li>A tap on Finish in the few seconds while the finish line's crossing waits for the fix past the line offers no "At finish line".</li><li>The Mark control's long-press times ("1 minute ago") can record a mark before the run's start.</li><li>"Mark actual distance" as filled reads the distance a moment behind where you are, so the course distance can step back a few metres.</li><li>An auto-finalise count-down kept when the app was ended stays kept if you run on, and finishes the run at once, at the crossing, if you later stop past the line again.</li><li>A run opened again more than 30 minutes after its finish line is finished at the crossing, also after "Cancel and continue run".</li><li>The Live Tracking maps can frame the runners you follow under their corner buttons.</li><li>On iOS, a waiting run set to start at its planned time is not started while the app is open with no GPS fix; it starts when a fix comes, dated at the planned time.</li><li>On Android, if the phone's key store can no longer read LivePace's encrypted settings, the app stops at every launch.</li><li>On Android, an elapsed time read aloud by TalkBack ends in " AM".</li></ul>
+        </section>
+
+    </article>
+
+
+</main>
+
+
+            <section class="gh-container is-grid gh-outer">
+                <div class="gh-container-inner gh-inner">
+                    <h2 class="gh-container-title">Read more</h2>
+                    <div class="gh-feed">
+                            <article class="gh-card post no-image">
+    <a class="gh-card-link" href="/livepace-0-8-0-beta1-released/">
+        <div class="gh-card-wrapper">
+            <h3 class="gh-card-title is-title">LivePace 0.8.0-beta1 released</h3>
+                    <p class="gh-card-excerpt is-body">LivePace 0.8.0-beta1 Release Notes
+
+The first beta of LivePace 0.8.0. The technical details are below, highlights are:
+
+ * A step-by-step run wizard for creating new runs, group runs, etc
+ * Lots of bugfixes and stability improvements
+ * Both Android and iOS apps are now in open beta, available from</p>
+            <footer class="gh-card-meta">
+<!--
+             -->
+                    <span class="gh-card-author">By David Fraser</span>
+                    <time class="gh-card-date" datetime="2026-11-21">21 Nov 2026</time>
+                <!--
+         --></footer>
+        </div>
+    </a>
+</article>
+                            <article class="gh-card post">
+    <a class="gh-card-link" href="/survey-2026-04/">
+            <figure class="gh-card-image">
+                <img
+                    srcset="/content/images/size/w160/format/webp/2026/04/okinawa-marathon-runners-high-five-volunteers-and-supporters-cropped-64a9c9.jpg 160w, /content/images/size/w320/format/webp/2026/04/okinawa-marathon-runners-high-five-volunteers-and-supporters-cropped-64a9c9.jpg 320w, /content/images/size/w600/format/webp/2026/04/okinawa-marathon-runners-high-five-volunteers-and-supporters-cropped-64a9c9.jpg 600w, /content/images/size/w960/format/webp/2026/04/okinawa-marathon-runners-high-five-volunteers-and-supporters-cropped-64a9c9.jpg 960w, /content/images/size/w1200/format/webp/2026/04/okinawa-marathon-runners-high-five-volunteers-and-supporters-cropped-64a9c9.jpg 1200w, /content/images/size/w2000/format/webp/2026/04/okinawa-marathon-runners-high-five-volunteers-and-supporters-cropped-64a9c9.jpg 2000w"
+                    sizes="320px"
+                    src="/content/images/size/w600/2026/04/okinawa-marathon-runners-high-five-volunteers-and-supporters-cropped-64a9c9.jpg"
+                    alt="Survey for Runners and Supporters"
+                    loading="lazy"
+                >
+            </figure>
+        <div class="gh-card-wrapper">
+            <h3 class="gh-card-title is-title">Survey for Runners and Supporters</h3>
+                    <p class="gh-card-excerpt is-body">We&#39;re keen to find out what both runners and their supporters currently use for tracking runs, how well that works for them, and what could make it better.
+
+Choose the Welcome Runners and Supporters survey below to fill it out.
+
+Welcome Runners and Supporters! | FormbricksPlease complete this survey.</p>
+            <footer class="gh-card-meta">
+<!--
+             -->
+                    <span class="gh-card-author">By David Fraser</span>
+                    <time class="gh-card-date" datetime="2026-04-23">23 Apr 2026</time>
+                <!--
+         --></footer>
+        </div>
+    </a>
+</article>
+                            <article class="gh-card post featured no-image">
+    <a class="gh-card-link" href="/introducing-livepace/">
+        <div class="gh-card-wrapper">
+            <h3 class="gh-card-title is-title">Introducing LivePace</h3>
+                    <p class="gh-card-excerpt is-body">LivePace is a new running pacing app coming out soon for Android and iOS.
+
+I wrote it to help tell my family where and when to meet me when they were supporting me in my first (very slow!) marathon, and it helped me get across the finish time just in</p>
+            <footer class="gh-card-meta">
+<!--
+             -->
+                    <span class="gh-card-author">By David Fraser</span>
+                    <time class="gh-card-date" datetime="2026-02-26">26 Feb 2026</time>
+                <!--
+         --></footer>
+        </div>
+    </a>
+</article>
+                    </div>
+                </div>
+            </section>
+
+    
+    <footer class="gh-footer gh-outer">
+    <div class="gh-footer-inner gh-inner">
+
+        <div class="gh-footer-bar">
+            <span class="gh-footer-logo is-title">
+                    <img src="/content/images/2026/02/ghost-logo-header-3.png" alt="LivePace">
+            </span>
+            <nav class="gh-footer-menu">
+                
+            </nav>
+            <div class="gh-footer-copyright">
+                    Copyright © Inconceivable R and D 2026
+            </div>
+        </div>
+
+
+    </div>
+</footer>    
+</div>
+
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg"></div>
+
+    <div class="pswp__scroll-wrap">
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/assets/built/source.js?v=26ea89a066"></script>
+
+
+
+</body>
+</html>
+<div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/assets/built/source.js?v=26ea89a066"></script>
+
+
+
+</body>
+</html>
