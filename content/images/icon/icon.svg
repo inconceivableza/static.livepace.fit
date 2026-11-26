@@ -1,0 +1,445 @@
+<svg id="stopwatch" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="-8 -8 124 124">
+
+  <!-- See 3d-icon-notes.md for feature inventory and platform compatibility notes. -->
+
+  <defs>
+
+    <!-- ═══ OUTER RING ═══ -->
+
+    <linearGradient id="grad-outer-ring-v"
+                    gradientUnits="userSpaceOnUse"
+                    x1="54" y1="26" x2="54" y2="82">
+      <stop offset="0%"   stop-color="#C6C6C6"/>
+      <stop offset="28%"  stop-color="#B3B3B3"/>
+      <stop offset="50%"  stop-color="#A0A0A0"/>
+      <stop offset="72%"  stop-color="#ABABAB"/>
+      <stop offset="100%" stop-color="#B6B6B6"/>
+    </linearGradient>
+
+    <linearGradient id="grad-outer-ring-h"
+                    gradientUnits="userSpaceOnUse"
+                    x1="26" y1="54" x2="82" y2="54">
+      <stop offset="0%"   stop-color="#222222" stop-opacity="0.45"/>
+      <stop offset="20%"  stop-color="#000000" stop-opacity="0"/>
+      <stop offset="55%"  stop-color="#000000" stop-opacity="0"/>
+      <stop offset="78%"  stop-color="#000000" stop-opacity="0.38"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.72"/>
+    </linearGradient>
+
+    <radialGradient id="grad-ring-top-shine"
+                    gradientUnits="userSpaceOnUse"
+                    cx="54" cy="26" r="22" fx="54" fy="26">
+      <stop offset="0%"   stop-color="#FFFFFF" stop-opacity="0.55"/>
+      <stop offset="55%"  stop-color="#FFFFFF" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="grad-ring-bottom-shine"
+                    gradientUnits="userSpaceOnUse"
+                    cx="54" cy="82" r="18" fx="54" fy="82">
+      <stop offset="0%"   stop-color="#FFFFFF" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Ring inner edge: thin filled annulus r=21.25–22.75 -->
+    <linearGradient id="grad-ring-inner-edge"
+                    gradientUnits="userSpaceOnUse"
+                    x1="54" y1="31.25" x2="54" y2="76.75">
+      <stop offset="0%"   stop-color="#1C1C1C"/>
+      <stop offset="35%"  stop-color="#363636"/>
+      <stop offset="65%"  stop-color="#626262"/>
+      <stop offset="100%" stop-color="#8C8C8C"/>
+    </linearGradient>
+
+    <!-- Ring outer edge: thin annulus r=28.0–28.75 -->
+    <linearGradient id="grad-ring-outer-edge"
+                    gradientUnits="userSpaceOnUse"
+                    x1="54" y1="25.25" x2="54" y2="82.75">
+      <stop offset="0%"   stop-color="#717171"/>
+      <stop offset="40%"  stop-color="#888888"/>
+      <stop offset="100%" stop-color="#A9A9A9"/>
+    </linearGradient>
+
+    <!-- ═══ INNER BEZEL / GLASS ═══ -->
+
+    <radialGradient id="grad-inner-bezel"
+                    gradientUnits="userSpaceOnUse"
+                    cx="54" cy="54" r="22">
+      <stop offset="0%"   stop-color="#0D0D0D"/>
+      <stop offset="74%"  stop-color="#0D0D0D"/>
+      <stop offset="86%"  stop-color="#1C1C1C"/>
+      <stop offset="93%"  stop-color="#3A3A3A"/>
+      <stop offset="100%" stop-color="#131313"/>
+    </radialGradient>
+
+    <linearGradient id="grad-bezel-shadow"
+                    gradientUnits="userSpaceOnUse"
+                    x1="54" y1="32" x2="54" y2="65">
+      <stop offset="0%"   stop-color="#000000" stop-opacity="0.80"/>
+      <stop offset="35%"  stop-color="#000000" stop-opacity="0.25"/>
+      <stop offset="65%"  stop-color="#000000" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="grad-bezel-rim"
+                    gradientUnits="userSpaceOnUse"
+                    x1="54" y1="32" x2="54" y2="43">
+      <stop offset="0%"   stop-color="#AAAAAA" stop-opacity="0.85"/>
+      <stop offset="45%"  stop-color="#555555" stop-opacity="0.40"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- ═══ CLOCK FACE ═══ -->
+
+    <radialGradient id="grad-green-segment"
+                    gradientUnits="userSpaceOnUse"
+                    cx="63" cy="37" r="28">
+      <stop offset="0%"   stop-color="#4CD64C"/>
+      <stop offset="35%"  stop-color="#00BE00"/>
+      <stop offset="70%"  stop-color="#009D00"/>
+      <stop offset="100%" stop-color="#007D00"/>
+    </radialGradient>
+
+    <linearGradient id="grad-orange-segment"
+                    gradientUnits="userSpaceOnUse"
+                    x1="58" y1="58" x2="40" y2="76">
+      <stop offset="0%"   stop-color="#E5A83D"/>
+      <stop offset="100%" stop-color="#CC691B"/>
+    </linearGradient>
+
+    <radialGradient id="grad-glass-sheen"
+                    gradientUnits="userSpaceOnUse"
+                    cx="61" cy="38" r="20">
+      <stop offset="0%"   stop-color="#FFFFFF" stop-opacity="0.22"/>
+      <stop offset="60%"  stop-color="#FFFFFF" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="grad-center-hub"
+                    gradientUnits="userSpaceOnUse"
+                    cx="53" cy="53" r="2.5">
+      <stop offset="0%"   stop-color="#EEEEEE"/>
+      <stop offset="100%" stop-color="#D6D6D6"/>
+    </radialGradient>
+
+    <linearGradient id="grad-hand-shadow"
+                    gradientUnits="userSpaceOnUse"
+                    x1="54" y1="54" x2="68" y2="68">
+      <stop offset="0%"   stop-color="#000000" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.10"/>
+    </linearGradient>
+
+    <!-- ═══ BUTTON GRADIENTS ═══
+         Cap:  x=49.270–58.730 (hw=4.73), y=13.078–21.516 (40px tall, top at 62px)
+         Stem: x=50.545–57.455 (hw=3.46), y=20.690–28.000 (unchanged)
+         The side button shares all grad-main-* defs — its transform rotates and
+         scales the userSpaceOnUse coordinate frame along with the geometry.
+    -->
+
+    <!-- Cap horizontal: cylindrical shading (dark edges, bright highlight left-of-centre) -->
+    <linearGradient id="grad-main-cap-h"
+                    gradientUnits="userSpaceOnUse"
+                    x1="49.270" y1="17.297" x2="58.730" y2="17.297">
+      <stop offset="0%"   stop-color="#3A3A3A"/>
+      <stop offset="20%"  stop-color="#BBBBBB"/>
+      <stop offset="38%"  stop-color="#EBEBEB"/>
+      <stop offset="55%"  stop-color="#C4C4C4"/>
+      <stop offset="100%" stop-color="#303030"/>
+    </linearGradient>
+
+    <!-- Cap vertical: light-from-top overlay -->
+    <linearGradient id="grad-main-cap-v"
+                    gradientUnits="userSpaceOnUse"
+                    x1="54" y1="13.078" x2="54" y2="21.516">
+      <stop offset="0%"   stop-color="#FFFFFF" stop-opacity="0.18"/>
+      <stop offset="40%"  stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.32"/>
+    </linearGradient>
+
+    <!-- Stem horizontal: cylindrical shading -->
+    <linearGradient id="grad-main-stem-h"
+                    gradientUnits="userSpaceOnUse"
+                    x1="50.545" y1="24.345" x2="57.455" y2="24.345">
+      <stop offset="0%"   stop-color="#3A3A3A"/>
+      <stop offset="22%"  stop-color="#C4C4C4"/>
+      <stop offset="40%"  stop-color="#E8E8E8"/>
+      <stop offset="58%"  stop-color="#BCBCBC"/>
+      <stop offset="100%" stop-color="#303030"/>
+    </linearGradient>
+
+    <!-- Stem vertical: light-from-top overlay -->
+    <linearGradient id="grad-main-stem-v"
+                    gradientUnits="userSpaceOnUse"
+                    x1="54" y1="20.690" x2="54" y2="28.000">
+      <stop offset="0%"   stop-color="#FFFFFF" stop-opacity="0.12"/>
+      <stop offset="40%"  stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.28"/>
+    </linearGradient>
+
+    <!-- Stem cap-shadow: shadow cast by cap overhang onto top of stem -->
+    <linearGradient id="grad-main-stem-cap-shadow"
+                    gradientUnits="userSpaceOnUse"
+                    x1="54" y1="20.690" x2="54" y2="23.190">
+      <stop offset="0%"   stop-color="#000000" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </linearGradient>
+
+
+    <!-- Organic paint swish gradients: low individual opacity for paint texture -->
+
+    <!-- Base: light wash, fades at tips; asymmetric density bump -->
+    <linearGradient id="grad-sw-base"
+                    gradientUnits="userSpaceOnUse"
+                    x1="18.90" y1="83.08" x2="89.10" y2="83.08">
+      <stop offset="0%"   stop-color="#009D00" stop-opacity="0.00"/>
+      <stop offset="7%"   stop-color="#009D00" stop-opacity="0.52"/>
+      <stop offset="20%"  stop-color="#007D00" stop-opacity="0.64"/>
+      <stop offset="38%"  stop-color="#007D00" stop-opacity="0.68"/>
+      <stop offset="58%"  stop-color="#007D00" stop-opacity="0.56"/>
+      <stop offset="80%"  stop-color="#009D00" stop-opacity="0.44"/>
+      <stop offset="100%" stop-color="#009D00" stop-opacity="0.00"/>
+    </linearGradient>
+
+    <!-- Fringe: very soft outer halo (dry-brush, almost invisible at edges) -->
+    <linearGradient id="grad-sw-fringe"
+                    gradientUnits="userSpaceOnUse"
+                    x1="18.90" y1="83.08" x2="89.10" y2="83.08">
+      <stop offset="0%"   stop-color="#007D00" stop-opacity="0"/>
+      <stop offset="9%"   stop-color="#007D00" stop-opacity="0.12"/>
+      <stop offset="35%"  stop-color="#007D00" stop-opacity="0.18"/>
+      <stop offset="60%"  stop-color="#007D00" stop-opacity="0.14"/>
+      <stop offset="88%"  stop-color="#007D00" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#007D00" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Bristle: uneven coverage, dense left-of-centre, gaps toward right -->
+    <linearGradient id="grad-sw-bristle"
+                    gradientUnits="userSpaceOnUse"
+                    x1="18.90" y1="83.08" x2="89.10" y2="83.08">
+      <stop offset="0%"   stop-color="#009D00" stop-opacity="0"/>
+      <stop offset="9%"   stop-color="#009D00" stop-opacity="0.26"/>
+      <stop offset="26%"  stop-color="#007D00" stop-opacity="0.32"/>
+      <stop offset="44%"  stop-color="#007D00" stop-opacity="0.14"/>
+      <stop offset="62%"  stop-color="#009D00" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#009D00" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Highlight: inner-zone gloss (lighter green, very light) -->
+    <linearGradient id="grad-sw-hi"
+                    gradientUnits="userSpaceOnUse"
+                    x1="18.90" y1="83.08" x2="89.10" y2="83.08">
+      <stop offset="0%"   stop-color="#4CD64C" stop-opacity="0"/>
+      <stop offset="10%"  stop-color="#4CD64C" stop-opacity="0.28"/>
+      <stop offset="38%"  stop-color="#00BE00" stop-opacity="0.22"/>
+      <stop offset="62%"  stop-color="#4CD64C" stop-opacity="0.18"/>
+      <stop offset="88%"  stop-color="#4CD64C" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#4CD64C" stop-opacity="0"/>
+    </linearGradient>
+
+  </defs>
+
+  <!-- ═══════════════════════════════════
+       LAYER ORDER (back to front):
+       0. opaque-bg    (hidden by default; unhide for platforms that forbid transparency)
+       1. paint-swish  (hidden by default; unhide for swish icon variants)
+       2. button-side
+       3. button-main
+       4. main-clock
+  ════════════════════════════════════ -->
+
+  <!-- Opaque background: hidden by default. Enabled by icon generation for
+       platforms that reject alpha channels (e.g. iOS App Store icon). -->
+  <rect id="opaque-bg" display="none" x="0" y="0" width="108" height="108" fill="#0D0D0D"/>
+
+
+  <!-- ═══ ORGANIC PAINT SWISH ═══
+       Inner arc r=36.91 centred on (54,54); tips at alpha=72 deg
+       Scaled 1.118x from original r=33 arc, sized so that at adaptive
+       icon scale 0.76 the button-top margin is ~4.9 and the swish
+       outer-edge margin is ~4.5 within the launcher circle (r=36).
+       4 semi-transparent layers: fringe -> base -> bristle -> highlight
+       All points within containment circle r=41.45 about (54,54).
+       Hidden by default; the icon generation scripts unhide this group
+       for launcher icons and other contexts where the swish is shown.
+  ═══ -->
+  <g id="paint-swish">
+    <path id="swish-fringe"    d="M 89.10,65.41 A 36.91,36.91 0 0,1 54,90.91 A 36.91,36.91 0 0,1 18.90,65.41 C 23.80,107.68 81.96,100.97 89.10,65.41 Z"    fill="url(#grad-sw-fringe)"/>
+    <path id="swish-base"      d="M 89.10,65.41 A 36.91,36.91 0 0,1 54,90.91 A 36.91,36.91 0 0,1 18.90,65.41 C 24.92,105.45 80.84,98.74 89.10,65.41 Z"      fill="url(#grad-sw-base)"/>
+    <path id="swish-bristle"   d="M 89.10,65.41 A 36.91,36.91 0 0,1 54,90.91 A 36.91,36.91 0 0,1 18.90,65.41 C 28.28,102.09 74.13,97.62 89.10,65.41 Z"   fill="url(#grad-sw-bristle)"/>
+    <path id="swish-highlight" d="M 89.10,65.41 A 36.91,36.91 0 0,1 54,90.91 A 36.91,36.91 0 0,1 18.90,65.41 C 33.87,96.50 75.25,95.38 89.10,65.41 Z"  fill="url(#grad-sw-hi)"/>
+  </g>
+
+
+  <!-- ═══ SIDE BUTTON
+       Same geometry as main button before transform.
+       transform: rotate 30° around clock centre (54,54), then scale 0.8 about the
+       stem bottom (54,28) — the point where the button meets the ring. Scaling about
+       the stem bottom keeps the button rooted at the ring edge while reducing its size.
+  ═══ -->
+  <g id="button-side"
+     transform="rotate(30,54,54) translate(54,28) scale(0.8) translate(-54,-28)">
+
+    <!-- Stem shading: base cylindrical fill -->
+    <rect id="button-side-stem"
+          x="50.545" y="20.690" width="6.910" height="7.310"
+          fill="url(#grad-main-stem-h)"/>
+    <!-- Stem shading: vertical light-from-top overlay -->
+    <rect id="button-side-stem-v"
+          x="50.545" y="20.690" width="6.910" height="7.310"
+          fill="url(#grad-main-stem-v)"/>
+    <!-- Stem cap-shadow: shadow from cap onto top of stem -->
+    <rect id="button-side-stem-cap-shadow"
+          x="50.545" y="20.690" width="6.910" height="2.500"
+          fill="url(#grad-main-stem-cap-shadow)"/>
+
+    <!-- Cap body: base cylindrical fill -->
+    <rect id="button-side-cap"
+          x="49.270" y="13.078" width="9.460" height="8.438"
+          fill="url(#grad-main-cap-h)"/>
+    <!-- Cap body: vertical light-from-top overlay -->
+    <rect id="button-side-cap-v"
+          x="49.270" y="13.078" width="9.460" height="8.438"
+          fill="url(#grad-main-cap-v)"/>
+
+  </g>
+
+
+  <!-- ═══ MAIN BUTTON ═══ -->
+  <g id="button-main">
+
+    <!-- Stem shading: base cylindrical fill -->
+    <rect id="button-main-stem"
+          x="50.545" y="20.690" width="6.910" height="7.310"
+          fill="url(#grad-main-stem-h)"/>
+    <!-- Stem shading: vertical light-from-top overlay -->
+    <rect id="button-main-stem-v"
+          x="50.545" y="20.690" width="6.910" height="7.310"
+          fill="url(#grad-main-stem-v)"/>
+    <!-- Stem cap-shadow: shadow from cap onto top of stem -->
+    <rect id="button-main-stem-cap-shadow"
+          x="50.545" y="20.690" width="6.910" height="2.500"
+          fill="url(#grad-main-stem-cap-shadow)"/>
+
+    <!-- Cap body: base cylindrical fill -->
+    <rect id="button-main-cap"
+          x="49.270" y="13.078" width="9.460" height="8.438"
+          fill="url(#grad-main-cap-h)"/>
+    <!-- Cap body: vertical light-from-top overlay -->
+    <rect id="button-main-cap-v"
+          x="49.270" y="13.078" width="9.460" height="8.438"
+          fill="url(#grad-main-cap-v)"/>
+
+    <!-- Cap ridge bands: 24 alternating light/dark bands.
+         Each pair spans 15°: light band = 11.25°, dark band = 3.75° (1:3 ratio).
+         x = 54 + 4.73·sin(θ), θ from −90° to +90° in 15° pairs.
+         IDs: NNN = start angle in degrees from left edge (0° = left, 180° = right).
+         Light: white opacity 0.20. Dark: black opacity 0.12 (50% closer to light).
+    -->
+    <g id="button-main-cap-ridges">
+      <rect id="button-main-cap-ridge-000" x="49.2700" y="13.0781" width="0.0909" height="8.4375" fill="white" opacity="0.20"/>
+      <rect id="button-main-cap-ridge-011" x="49.3609" y="13.0781" width="0.0703" height="8.4375" fill="black" opacity="0.12"/>
+      <rect id="button-main-cap-ridge-015" x="49.4312" y="13.0781" width="0.3266" height="8.4375" fill="white" opacity="0.20"/>
+      <rect id="button-main-cap-ridge-026" x="49.7578" y="13.0781" width="0.1459" height="8.4375" fill="black" opacity="0.12"/>
+      <rect id="button-main-cap-ridge-030" x="49.9037" y="13.0781" width="0.5401" height="8.4375" fill="white" opacity="0.20"/>
+      <rect id="button-main-cap-ridge-041" x="50.4438" y="13.0781" width="0.2116" height="8.4375" fill="black" opacity="0.12"/>
+      <rect id="button-main-cap-ridge-045" x="50.6554" y="13.0781" width="0.7168" height="8.4375" fill="white" opacity="0.20"/>
+      <rect id="button-main-cap-ridge-056" x="51.3722" y="13.0781" width="0.2628" height="8.4375" fill="black" opacity="0.12"/>
+      <rect id="button-main-cap-ridge-060" x="51.6350" y="13.0781" width="0.8446" height="8.4375" fill="white" opacity="0.20"/>
+      <rect id="button-main-cap-ridge-071" x="52.4796" y="13.0781" width="0.2962" height="8.4375" fill="black" opacity="0.12"/>
+      <rect id="button-main-cap-ridge-075" x="52.7758" y="13.0781" width="0.9149" height="8.4375" fill="white" opacity="0.20"/>
+      <rect id="button-main-cap-ridge-086" x="53.6906" y="13.0781" width="0.3094" height="8.4375" fill="black" opacity="0.12"/>
+      <rect id="button-main-cap-ridge-090" x="54.0000" y="13.0781" width="0.9228" height="8.4375" fill="white" opacity="0.20"/>
+      <rect id="button-main-cap-ridge-101" x="54.9228" y="13.0781" width="0.3014" height="8.4375" fill="black" opacity="0.12"/>
+      <rect id="button-main-cap-ridge-105" x="55.2242" y="13.0781" width="0.8678" height="8.4375" fill="white" opacity="0.20"/>
+      <rect id="button-main-cap-ridge-116" x="56.0920" y="13.0781" width="0.2730" height="8.4375" fill="black" opacity="0.12"/>
+      <rect id="button-main-cap-ridge-120" x="56.3650" y="13.0781" width="0.7537" height="8.4375" fill="white" opacity="0.20"/>
+      <rect id="button-main-cap-ridge-131" x="57.1187" y="13.0781" width="0.2259" height="8.4375" fill="black" opacity="0.12"/>
+      <rect id="button-main-cap-ridge-135" x="57.3446" y="13.0781" width="0.5882" height="8.4375" fill="white" opacity="0.20"/>
+      <rect id="button-main-cap-ridge-146" x="57.9329" y="13.0781" width="0.1634" height="8.4375" fill="black" opacity="0.12"/>
+      <rect id="button-main-cap-ridge-150" x="58.0963" y="13.0781" width="0.3827" height="8.4375" fill="white" opacity="0.20"/>
+      <rect id="button-main-cap-ridge-161" x="58.4790" y="13.0781" width="0.0898" height="8.4375" fill="black" opacity="0.12"/>
+      <rect id="button-main-cap-ridge-165" x="58.5688" y="13.0781" width="0.1510" height="8.4375" fill="white" opacity="0.20"/>
+      <rect id="button-main-cap-ridge-176" x="58.7199" y="13.0781" width="0.0101" height="8.4375" fill="black" opacity="0.12"/>
+    </g>
+
+  </g>
+
+
+  <!-- ═══ MAIN CLOCK (renders over button bases) ═══ -->
+  <g id="main-clock">
+
+    <!-- Ring outer edge: thin annulus r=28.0–28.75 -->
+    <path id="ring-outer-edge"
+          fill="url(#grad-ring-outer-edge)"
+          fill-rule="evenodd"
+          d="M54,25.25 a28.75,28.75 0 1,1 0,57.5 a28.75,28.75 0 1,1 0,-57.5
+             M54,26 a28,28 0 1,0 0,56 a28,28 0 1,0 0,-56"/>
+
+    <!-- Outer ring: vertical luminance -->
+    <path id="outer-ring"
+          fill="url(#grad-outer-ring-v)"
+          fill-rule="evenodd"
+          d="M54,26 a28,28 0 1,1 0,56 a28,28 0 1,1 0,-56
+             M54,32 a22,22 0 1,0 0,44 a22,22 0 1,0 0,-44"/>
+
+    <!-- Outer ring: horizontal side-darkening overlay -->
+    <path id="outer-ring-side-dark"
+          fill="url(#grad-outer-ring-h)"
+          fill-rule="evenodd"
+          d="M54,26 a28,28 0 1,1 0,56 a28,28 0 1,1 0,-56
+             M54,32 a22,22 0 1,0 0,44 a22,22 0 1,0 0,-44"/>
+
+    <!-- Outer ring: top specular shine -->
+    <path id="outer-ring-top-shine"
+          fill="url(#grad-ring-top-shine)"
+          fill-rule="evenodd"
+          d="M54,26 a28,28 0 1,1 0,56 a28,28 0 1,1 0,-56
+             M54,32 a22,22 0 1,0 0,44 a22,22 0 1,0 0,-44"/>
+
+    <!-- Outer ring: bottom specular shine -->
+    <path id="outer-ring-bottom-shine"
+          fill="url(#grad-ring-bottom-shine)"
+          fill-rule="evenodd"
+          d="M54,26 a28,28 0 1,1 0,56 a28,28 0 1,1 0,-56
+             M54,32 a22,22 0 1,0 0,44 a22,22 0 1,0 0,-44"/>
+
+    <!-- Ring inner edge: thin filled annulus r=21.25–22.75 -->
+    <path id="ring-inner-edge"
+          fill="url(#grad-ring-inner-edge)"
+          fill-rule="evenodd"
+          d="M54,31.25 a22.75,22.75 0 1,1 0,45.5 a22.75,22.75 0 1,1 0,-45.5
+             M54,32.75 a21.25,21.25 0 1,0 0,42.5 a21.25,21.25 0 1,0 0,-42.5"/>
+
+    <!-- Bezel -->
+    <g id="bezel">
+      <circle id="inner-bezel" cx="54" cy="54" r="22" fill="url(#grad-inner-bezel)"/>
+      <circle id="glass-reflection-shadow" cx="54" cy="54" r="22" fill="url(#grad-bezel-shadow)"/>
+      <circle id="glass-reflection-rim" cx="54" cy="54" r="22" fill="url(#grad-bezel-rim)"/>
+      <path id="green-segment"
+            fill="url(#grad-green-segment)"
+            d="M54,54 L54,32 A22,22 0 1,1 45.58,74.33 Z"/>
+      <path id="orange-segment"
+            fill="url(#grad-orange-segment)"
+            d="M54,54 L45.58,74.33 A22,22 0 0,1 33.67,62.42 Z"/>
+    </g>
+
+    <!-- Glass sheen -->
+    <circle id="glass-reflection" cx="54" cy="54" r="22" fill="url(#grad-glass-sheen)"/>
+
+    <!-- Minute hand shadow -->
+    <path id="hand-minute-shadow"
+          fill="url(#grad-hand-shadow)"
+          d="M54.125,54.875 L54.875,54.125 L68.325,67.575 L67.575,68.325 Z"/>
+
+    <!-- Minute hand (75% of original width) -->
+    <path id="hand-minute"
+          fill="#FFFFFF"
+          d="M53.625,54.375 L54.375,53.625 L67.825,67.075 L67.075,67.825 Z"/>
+
+    <!-- Centre hub -->
+    <path id="center-hub"
+          fill="url(#grad-center-hub)"
+          d="M54,54 m-2.5,0 a2.5,2.5 0 1,1 5,0 a2.5,2.5 0 1,1 -5,0"/>
+
+  </g>
+
+</svg>
